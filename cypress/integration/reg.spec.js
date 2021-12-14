@@ -1,30 +1,22 @@
 describe('registration test', () => {
 
-  xit('register with empty fields', () => {
+  it('register with empty fields', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
     cy.get('a[href="/register"]').click();
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/register');
-
-    // cy.get('#first-name').type('Petar');
-    // cy.get('#last-name').type('Dragovic');
-    // cy.get('#email').type('peka@gmail.com');
-    // cy.get('#password').type('peka2808');
-    // cy.get('#password-confirmation').type('peka2808');
     cy.get('[type="checkbox"]').click();
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with only email and password', () => {
+  it('register with only email and password', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
     cy.get('a[href="/register"]').click();
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/register');
 
-    // cy.get('#first-name').type('Petar');
-    // cy.get('#last-name').type('Dragovic');
     cy.get('#email').type('pekadragovic@gmail.com');
     cy.get('#password').type('peka2808');
     cy.get('#password-confirmation').type('peka2808');
@@ -32,7 +24,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register without email', () => {
+  it('register without email', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -41,14 +33,13 @@ describe('registration test', () => {
 
     cy.get('#first-name').type('Petar');
     cy.get('#last-name').type('Dragovic');
-    // cy.get('#email').type('pekadragovic@gmail.com');
     cy.get('#password').type('peka2808');
     cy.get('#password-confirmation').type('peka2808');
     cy.get('[type="checkbox"]').click();
     cy.get('[type="submit"]').click();
   });
 
-  xit('register without password', () => {
+  it('register without password', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -58,13 +49,11 @@ describe('registration test', () => {
     cy.get('#first-name').type('Petar');
     cy.get('#last-name').type('Dragovic');
     cy.get('#email').type('pekadragovic@gmail.com');
-    // cy.get('#password').type('peka2808');
-    // cy.get('#password-confirmation').type('peka2808');
     cy.get('[type="checkbox"]').click();
     cy.get('[type="submit"]').click();
   });
 
-  xit('register without password confirmation', () => {
+  it('register without password confirmation', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -75,19 +64,17 @@ describe('registration test', () => {
     cy.get('#last-name').type('Dragovic');
     cy.get('#email').type('pekadragovic@gmail.com');
     cy.get('#password').type('peka2808');
-    // cy.get('#password-confirmation').type('peka2808');
     cy.get('[type="checkbox"]').click();
     cy.get('[type="submit"]').click();
   });
 
-  xit('register without first name', () => {
+  it('register without first name', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
     cy.get('a[href="/register"]').click();
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/register');
 
-    // cy.get('#first-name').type('Petar');
     cy.get('#last-name').type('Dragovic');
     cy.get('#email').type('pekadragovic@gmail.com');
     cy.get('#password').type('peka2808');
@@ -96,7 +83,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register without last name', () => {
+  it('register without last name', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -104,7 +91,6 @@ describe('registration test', () => {
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/register');
 
     cy.get('#first-name').type('Petar');
-    // cy.get('#last-name').type('Dragovic');
     cy.get('#email').type('pekadragovic@gmail.com');
     cy.get('#password').type('peka2808');
     cy.get('#password-confirmation').type('peka2808');
@@ -112,7 +98,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with all-space first and last name', () => {
+  it('register with all-space first and last name', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -128,7 +114,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with all-space password', () => {
+  it('register with all-space password', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -144,7 +130,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with password no digits', () => {
+  it('register with password no digits', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -160,8 +146,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  // this passed
-  xit('register with password only digits', () => {
+  it('register with password only digits', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -177,7 +162,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with password less then 8 characters', () => {
+  it('register with password less then 8 characters', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -193,8 +178,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  // this passed
-  xit('register with one character in name and last name', () => {
+  it('register with one character in name and last name', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -210,7 +194,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with already taken email', () => {
+  it('register with already taken email', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -226,7 +210,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  it.only('register - no terms checked', () => {
+  it('register - no terms checked', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
@@ -242,7 +226,7 @@ describe('registration test', () => {
     cy.get('[type="submit"]').click();
   });
 
-  xit('register with all valid data', () => {
+  it('register with all valid data', () => {
     cy.visit('/');
     cy.url().should('eq', 'https://gallery-app.vivifyideas.com/');
 
